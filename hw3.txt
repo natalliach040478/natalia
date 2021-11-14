@@ -7,11 +7,20 @@ SQL
 Charles
 Mobile_testing
 	git branch [name branch]
-	git status 
+	git branch - список веток 
+	
 2.Запушить ветки на внешний репозиторий:
 	git push -u origin [name branch] or git push -u origin --all
-3.Запушить структуру багрепорта на внешний репозиторий:
-	создаем файл: touch file_1.json
+
+3.В ветке Bag_Reports сделать текстовый документ со структурой баг репорта:
+	заходим на ветку Bag_Reports:
+	git checkout Bag_Reports
+	git branch - проверяем ветку, д.б. (*)
+	создаем файл в ветке Bag_Reports: 
+	touch Test_1.json
+	ls -la
+	vim Test_1.json
+	insert
 	пишем структуру баг репорта
 	-Summary: description of the problem,
 	-Project: name of the project,
@@ -22,9 +31,11 @@ Mobile_testing
 	-Author: QA name,
 	-Assigned To: who is solving the problem,
 	-Steps to Reproduce: describe the steps that make the error, reproduce the situation
-	-Result: incorrect result,
+	-Result: incorrecgt result,
 	-Expected Result: correct result,
 	-Attachment: documents to explain the cause of the error
+	esc :wq
+	cat bag_reports.json
 4.Запушить структуру багрепорта на внешний репозиторий:
 	git add .
 	git commit -m "describe [name file]"
@@ -34,13 +45,13 @@ Mobile_testing
 	при необходимости переход на главную: git checkout Main
 	если да,то: git merge Bag_Reports
 6.Запушить main на внешний репозиторий:
-	git ??????????????????
+	git push -u origin main
 7.В ветке CheckLists набросать структуру чек листа.
 	переход в ветку CheckLists: git checkout CheckLists
-	создаем файл: touch file_2.json
+	создаем файл: touch Test_2.json
 	вывод списка: ls -la
 	пишем структуру баг репорта: 
-					vim file_2.json 
+					vim Test_2.json 
 					insert
 	-Summary: calculator 
 	-Build version: 1.0
@@ -50,9 +61,16 @@ Mobile_testing
 	-Test type: Smoke
 	-Name checking: 
 	-Test result: correct or uncorrect
+					esc :wq
+					cat Test_2.json
 8.Запушить структуру чек листа на внешний репозиторий
 	git add .
 	git commit -m "describe [name file]"
 	git push
 9.На внешнем репозитории сделать Pull Request ветки CheckLists в main
+
 10.Синхронизировать Внешнюю и Локальную ветки Main
+	в терминале переходим в main: git checkout main
+	потом			      git fetch смотрим изм-я на внешнем репозит., но не забираем его с внешенего репозитория
+				      git pull  забираем
+				      git fetch если все прошло ок то нет других строчек тольлько следующая ком.строка
