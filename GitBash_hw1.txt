@@ -1,0 +1,119 @@
+1.Посмотреть где я: pwd /d/lesson_1_terminal enter
+2.Создать папку: mkdir folder_1 enter
+3.Зайти в папку: cd folder_1 enter
+4.Создать 3 папки: mkdir f_1 f_2 f_3 enter
+5.Зайти в любую папку:  cd f_1 enter или cd f_2 enter и т.д.
+6.Создать 5 файлов (3 txt, 2 json):
+6.1 выход на уровень выше: cd ../ enter
+6.2 touch test.txt другая команда > test.txt enter
+6.3 touch test_1.txt enter
+6.4 touch test_2.txt enter
+6.5 touch test_3.json enter
+6.6 touch test_4.json enter
+7.Создать 3 папки: см.пункт 4 или вариант папка в папке:
+7.1 mkdir -p d_1/d_2/d_3 enter
+8.Вывести список содержимого папки:
+8.1 видимый ls enter
+d_1/  f_2/  test.txt    test_2.txt   test_4.json
+f_1/  f_3/  test_1.txt  test_3.json
+8.2 невидимый ls -la enter
+total 4
+drwxr-xr-x 1 Натали 197121 0 Oct 30 21:51 ./
+drwxr-xr-x 1 Натали 197121 0 Oct 30 21:19 ../
+drwxr-xr-x 1 Натали 197121 0 Oct 30 21:51 d_1/
+drwxr-xr-x 1 Натали 197121 0 Oct 30 21:25 f_1/
+drwxr-xr-x 1 Натали 197121 0 Oct 30 21:25 f_2/
+drwxr-xr-x 1 Натали 197121 0 Oct 30 21:25 f_3/
+-rw-r--r-- 1 Натали 197121 0 Oct 30 21:37 test.txt
+-rw-r--r-- 1 Натали 197121 0 Oct 30 21:38 test_1.txt
+-rw-r--r-- 1 Натали 197121 0 Oct 30 21:39 test_2.txt
+-rw-r--r-- 1 Натали 197121 0 Oct 30 21:41 test_3.json
+-rw-r--r-- 1 Натали 197121 0 Oct 30 21:42 test_4.json
+9.Открыть любой файл:
+9.1 vim test.txt enter
+9.2 cat test.txt enter
+10.Написать что-нибудь:
+10.1 кнопка клавиатуры i enter
+10.2 фигурные скобки {} раскрываем
+10.3 tab "ключ":"значение" ч/з запятую и tab "ключ":"значение"
+11.Сохранить и выйти:
+ esc :wq enter
+ вывод текста в терминале cat test.txt или заходим в файл
+	{
+        "name":"natalia"
+}
+12.Выход из папки на уровень выше
+12.1 cd ../ enter
+12.2 cd ./ enter
+12.3 после каждого уровня можно проверить текущее положение (где я)
+ pwd enter
+13.Перемещение файлов в папку:
+13.1 перехожу на уровень ниже   cd folder_1
+13.2 перемещениеc mv test_3.json test_4.json f_1
+
+ /d/lesson_1_terminal/folder_1/f_1
+$ ls
+test_3.json  test_4.json
+14.Скопировать 2 файла в папку: команда cp test_1.txt test_2.txt f_1 enter
+посмотреть 
+ls f_1
+test_1.txt  test_2.txt
+15.Найти файл по имени: команда find -name test_1.txt (имя файла)enter
+16.Посмотреть содержимое в реальном времени:
+поиск текста без регистра: grep -i apple test_1.txt enter
+Apple1
+apple2
+apple3
+Apple4
+apple5
+start test_1.txt
+17.Вывести несколько первых срок из текст.файла: head -2 test_1.txt enter
+Apple1
+apple2
+18.Вывести несколько последних строк: sed -n 3,5p test_1.txt enter
+apple3
+Apple4
+apple5
+19.Просмотр содержимого длинного файла:  less test_1.txt enter
+20.Вывести дату и время  date -r test_1.txt
+Sun Oct 31 18:36:13     2021
+Задание *
+1) Запрос http на сервер: 
+curl "http://162.55.220.72:5005/object_info_3?name=Vadim&age=32&salary=1000"
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   185  100   185    0     0    519      0 --:--:-- --:--:-- --:--:--   522{"age":"32","family":{"children":[["Alex",24],["Kate",12]],"pets":{"cat":{"age":3,"name":"Sunny"},"dog":{"age":4,"name":"Luky"}},"u_salary_1_5_year":4000},"name":"Vadim","salary":1000}
+2)Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13:
+     Путь d/git/natalia
+touch myscript.sh
+vim  myscript.sh
+1.	mkdir folder_1
+2.	cd  folder_1
+3.	mkdir n_1 n_2 n_3
+4.	cd n_1
+5.	cd ../
+6.	touch test.txt touch test_1.txt  touch test_2.txt  touch test_3.json touch test_4.json
+7.	mkdir -p ch_1/ch_2/ch_3
+8.	ls -la
+9.	mv test.txt test_1.txt test_2.txt test_3.json test_.json n_1
+10.	cd n_1
+11.	ls
+12.	esc :wq
+13.	bash myscript.sh enter
+ 
+total 8
+drwxr-xr-x 1 Натали 197121 0 Nov  3 22:38 .
+drwxr-xr-x 1 Натали 197121 0 Nov  3 22:38 ..
+drwxr-xr-x 1 Натали 197121 0 Nov  3 22:38 ch_1
+drwxr-xr-x 1 Натали 197121 0 Nov  3 22:38 n_1
+drwxr-xr-x 1 Натали 197121 0 Nov  3 22:38 n_2
+drwxr-xr-x 1 Натали 197121 0 Nov  3 22:38 n_3
+-rw-r--r-- 1 Натали 197121 0 Nov  3 22:38 test.txt
+-rw-r--r-- 1 Натали 197121 0 Nov  3 22:38 test_1.txt
+-rw-r--r-- 1 Натали 197121 0 Nov  3 22:38 test_2.txt
+-rw-r--r-- 1 Натали 197121 0 Nov  3 22:38 test_3.json
+-rw-r--r-- 1 Натали 197121 0 Nov  3 22:38 test_4.json
+test.txt  test_1.txt  test_2.txt  test_3.json  test_4.json
+
+    
+        

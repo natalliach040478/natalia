@@ -1,0 +1,15 @@
+{
+	"Summary": "description of the problem" ,
+	"Project": "name of the project" ,
+	"Version": "the version on which the bug was found",
+	"Severity": "choose one of five levels S1-S5",
+	"Priority": "choose one of three levels P1-P3",
+	"Status": "bug status",
+	"Author": "QA name",
+	"Assigned To": "who is solving the problem",
+	"Steps to Reproduce": "reproduce the situation",
+	"Result": "incorrect result",
+	"Expected Result": "correct result",
+	"Attachment": "documents to explain the cause of the error"
+	
+}

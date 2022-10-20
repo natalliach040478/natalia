@@ -1,0 +1,58 @@
+1.На локальном репозитории сделать ветки для:
+Postman
+Jmeter
+CheckLists
+Bag_Reports
+SQL
+Charles
+Mobile_testing
+	git branch [name branch]
+	git status 
+2.Запушить ветки на внешний репозиторий:
+	git push -u origin [name branch] or git push -u origin --all
+3.Запушить структуру багрепорта на внешний репозиторий:
+	создаем файл: touch file_1.json
+	пишем структуру баг репорта
+	-Summary: description of the problem,
+	-Project: name of the project,
+	-Version: the version on which the bug was found,
+	-Severity: choose one of five levels S1-S5,
+	-Priority: choose one of three levels P1-P3,
+	-Status: bug status,
+	-Author: QA name,
+	-Assigned To: who is solving the problem,
+	-Steps to Reproduce: describe the steps that make the error, reproduce the situation
+	-Result: incorrect result,
+	-Expected Result: correct result,
+	-Attachment: documents to explain the cause of the error
+4.Запушить структуру багрепорта на внешний репозиторий:
+	git add .
+	git commit -m "describe [name file]"
+	git push
+5.Вмержить ветку Bag_Reports в Main:
+	смотрим ветку: git branch
+	при необходимости переход на главную: git checkout Main
+	если да,то: git merge Bag_Reports
+6.Запушить main на внешний репозиторий:
+	git ??????????????????
+7.В ветке CheckLists набросать структуру чек листа.
+	переход в ветку CheckLists: git checkout CheckLists
+	создаем файл: touch file_2.json
+	вывод списка: ls -la
+	пишем структуру баг репорта: 
+					vim file_2.json 
+					insert
+	-Summary: calculator 
+	-Build version: 1.0
+	-Environment: Windows 10
+	-Tast date: 05.11-07.11.2021
+	-Taster name: Natallia
+	-Test type: Smoke
+	-Name checking: 
+	-Test result: correct or uncorrect
+8.Запушить структуру чек листа на внешний репозиторий
+	git add .
+	git commit -m "describe [name file]"
+	git push
+9.На внешнем репозитории сделать Pull Request ветки CheckLists в main
+10.Синхронизировать Внешнюю и Локальную ветки Main
